@@ -5,18 +5,19 @@ Created on Wed Jan 24 01:53:16 2018
 
 @author: blakemcmurray
 """
-def Suffix(Dna):
-    word = Dna[1:]
-    return(word)
-def Prefix(Dna):
-    word = Dna[0:len(Dna)-1]
+def suffix(dna):
+    word = dna[1:]
     return(word)
 
-def overlapGraph(Patterns):
+def prefix(dna):
+    word = dna[0:len(dna)-1]
+    return(word)
+
+def overlap_graph(patterns):
     graph = {}  
-    for i in range(len(Patterns)):
-        for j in range(len(Patterns)):
-            if Prefix(Patterns[i]) == Suffix(Patterns[j]):
-                graph[Patterns[j]] = Patterns[i]
+    for i in range(len(patterns)):
+        for j in range(len(patterns)):
+            if prefix(patterns[i]) == suffix(patterns[j]):
+                graph[patterns[j]] = patterns[i]
                 
     return(graph)
