@@ -1,6 +1,6 @@
-import hamming
-def approxOccurence(Text,Pattern,d):
-    for i in range(len(Text)-len(Pattern)+1):
-        if(hamming.hammingDist(Pattern,Text[i:i+len(Pattern)]) <= d):
+import hamming as ham
+def approx_occurence(text,pattern,d):
+    for i in range(len(text)-len(pattern)+1):
+        if(ham.hammingDist(pattern,text[i:i+len(pattern)]) <= d):
             return(True)
     return(False)
