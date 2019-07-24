@@ -1,8 +1,8 @@
 import hamming
-import reverseComplement
-def approxPatMatchRev(Pattern,Text,d):
+import reverseComplement as RC
+def approx_pat_match_rev(pattern,text,d):
     count = 0
-    for i in range(len(Text) - len(Pattern) + 1):
-        if(hamming.hammingDist(Text[i:i+len(Pattern)],Pattern) <= d or hamming.hammingDist(Text[i:i+len(Pattern)],reverseComplement.reverseComp(Pattern)) <= d):
+    for i in range(len(text) - len(pattern) + 1):
+        if(hamming.hamming_dist(text[i:i+len(pattern)],pattern) <= d or hamming.hamming_dist(text[i:i+len(pattern)],RC.reverse_comp(pattern)) <= d):
             count = count + 1
     return(count)
