@@ -7,9 +7,9 @@ def immediate_neighbors(pattern):
         k = pattern[i]
         for j in letters:
             if(j != k):
-                toAdd = list(pattern)
-                toAdd[i] = j
-                neighborhood.append(''.join(toAdd))
+                to_add = list(pattern)
+                to_add[i] = j
+                neighborhood.append(''.join(to_add))
     return(neighborhood)
 
 def iterative_neighbors(pattern,d):
