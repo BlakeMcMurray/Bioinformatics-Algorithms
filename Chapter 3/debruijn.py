@@ -14,11 +14,11 @@ def prefix(Dna):
     return(word)
     
 def elim_dup(list):
-    noDup = []
+    no_dup = []
     for k in range (len(list)):
-        if list[k] not in noDup:
-            noDup.append(list[k])
-    return(noDup)   
+        if list[k] not in no_dup:
+            no_dup.append(list[k])
+    return(no_dup)   
     
 def comp_of_s(k, Text):
     list = []
