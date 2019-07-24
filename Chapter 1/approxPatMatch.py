@@ -1,11 +1,10 @@
 import hamming
 #Working code
-def approxMatch(Pattern,Text,d):
+def approx_match(pattern,text,d):
     sPositions = []
-    for i in range(len(Text)-len(Pattern)+1):
-        if(hamming.hammingDist(Pattern,Text[i:i+len(Pattern)]) <= d):
+    for i in range(len(text)-len(pattern)+1):
+        if(hamming.hammingDist(pattern,text[i:i+len(pattern)]) <= d):
             sPositions.append(i)
     return(sPositions)
-
 
 
