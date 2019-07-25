@@ -1,5 +1,5 @@
 import math
-def numbertoPattern(num,k):
+def number_to_pattern(num,k):
     pattern = []
     for i in reversed(range(0,k)):
         n = math.floor(num/(4**i))
@@ -16,6 +16,5 @@ def numbertoPattern(num,k):
             pattern.append('T')
             num = num - 3*4**i
 
-    toReturn = ''.join(pattern)
-    return(toReturn)
-
+    patterns = ''.join(pattern)
+    return(patterns)
