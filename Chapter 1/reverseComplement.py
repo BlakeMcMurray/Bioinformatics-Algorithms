@@ -1,13 +1,13 @@
-def reverseComp(st):
-    revComp = ""
+def reverse_comp(st):
+    rev_comp = ""
     for i in reversed(st):
         if i == "A":
-            revComp = revComp + "T"
+            rev_comp = rev_comp + "T"
         elif i == "T":
-            revComp = revComp + "A"
+            rev_comp = rev_comp + "A"
         elif i == "G":
-            revComp = revComp + "C"
+            rev_comp = rev_comp + "C"
         elif i == "C":
-            revComp = revComp + "G"
-    return(revComp)
+            rev_comp = rev_comp + "G"
+    return(rev_comp)
 
