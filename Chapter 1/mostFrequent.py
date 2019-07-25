@@ -1,6 +1,6 @@
 import math
 import numpy
-def numbertoPattern(num,k):
+def number_to_pattern(num,k):
     pattern = []
     for i in reversed(range(0,k)):
         n = math.floor(num/(4**i))
@@ -16,11 +16,11 @@ def numbertoPattern(num,k):
         elif(n == 3):
             pattern.append('T')
             num = num - 3*4**i
-    toReturn = ''.join(pattern)
-    return(toReturn)
+    s_pattern = ''.join(pattern)
+    return(s_pattern)
 
 
-def patternToNumber(pattern):
+def pattern_to_number(pattern):
     num = 0
     for i in reversed(range(len(pattern))):
         if(pattern[i] == "A"):
@@ -33,20 +33,14 @@ def patternToNumber(pattern):
             num = num + 3*4**(len(pattern)-i-1)
     return(num)
 
-def mostFrequentBV(Text,k):
+def most_frequent_bv(text,k):
     lst = [0]*((4**k))
     words = []
-    for i in range(len(Text)-k+1):
-        lst[patternToNumber(Text[i:i+k])] += 1
+    for i in range(len(text)-k+1):
+        lst[pattern_to_number(text[i:i+k])] += 1
     m = numpy.amax(lst,None)
     for i in range(len(lst)):
         if(lst[i] == m):
-            words.append(numbertoPattern(i,k))
+            words.append(number_to_pattern(i,k))
 
     return(words)
-
-
-
-    
-
-
