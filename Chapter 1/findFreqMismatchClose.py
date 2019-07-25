@@ -1,28 +1,28 @@
 import dNeighborhood
 import mostFrequentSort
 import approxPatMatch
-def findFreqMismatch(Text,k,d):
+def find_freq_mismatch(text,k,d):
     close = [0]*4**k
     freq = [0]*4**k
     patterns = []
-    for i in range(len(Text)-k+1):
-        neigh = dNeighborhood.iterativeNeighbors(Text[i:i+k],d)
+    for i in range(len(text)-k+1):
+        neigh = dNeighborhood.iterative_neighbors(text[i:i+k],d)
         for i in neigh:
-            close[mostFrequentSort.patternToNumber(i)] = 1
+            close[mostFrequentSort.pattern_to_number(i)] = 1
     for i in range(len(close)):
         if(close[i] == 1):
-            freq[i] = len(approxPatMatch.approxMatch(mostFrequentSort.numbertoPattern(i,k),Text,d))
+            freq[i] = len(approxPatMatch.approx_match(mostFrequentSort.number_to_pattern(i,k),text,d))
 
     m = max(freq)
     x = sum(freq)
-    print(x)
+
     for i in range(len(freq)):
         if (freq[i] == m):
-            patterns.append(mostFrequentSort.numbertoPattern(i,k))
-            print(mostFrequentSort.numbertoPattern(i,k))
+            patterns.append(mostFrequentSort.number_to_pattern(i,k))
+            print(mostFrequentSort.number_to_pattern(i,k))
     return(patterns)
 
-find = findFreqMismatch("CACAGTAGGCGCCGGCACACACAGCCCCGGGCCCCGGGCCGCCCCGGGCCGGCGGCCGCCGGCGCCGGCACACCGGCACAGCCGTACCGGCACAGTAGTACCGGCCGGCCGGCACACCGGCACACCGGGTACACACCGGGGCGCACACACAGGCGGGCGCCGGGCCCCGGGCCGTACCGGGCCGCCGGCGGCCCACAGGCGCCGGCACAGTACCGGCACACACAGTAGCCCACACACAGGCGGGCGGTAGCCGGCGCACACACACACAGTAGGCGCACAGCCGCCCACACACACCGGCCGGCCGGCACAGGCGGGCGGGCGCACACACACCGGCACAGTAGTAGGCGGCCGGCGCACAGCC",10,2)
+find = find_freq_mismatch("CACAGTAGGCGCCGGCACACACAGCCCCGGGCCCCGGGCCGCCCCGGGCCGGCGGCCGCCGGCGCCGGCACACCGGCACAGCCGTACCGGCACAGTAGTACCGGCCGGCCGGCACACCGGCACACCGGGTACACACCGGGGCGCACACACAGGCGGGCGCCGGGCCCCGGGCCGTACCGGGCCGCCGGCGGCCCACAGGCGCCGGCACAGTACCGGCACACACAGTAGCCCACACACAGGCGGGCGGTAGCCGGCGCACACACACACAGTAGGCGCACAGCCGCCCACACACACCGGCCGGCCGGCACAGGCGGGCGGGCGCACACACACCGGCACAGTAGTAGGCGGCCGGCGCACAGCC",10,2)
 
 f = open("out.txt","w")
 for i in find:
