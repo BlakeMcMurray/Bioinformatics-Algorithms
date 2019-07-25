@@ -4,6 +4,6 @@ import minD
 def d(pattern,motifs):
     summ = 0
     for i in motifs:
-        d_call = minD.minD(pattern,i)
+        d_call = minD.min_d(pattern,i)
         summ += d_call        
     return(summ)
