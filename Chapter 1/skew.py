@@ -9,16 +9,16 @@ def skew(genome):
             lst[i] = lst[i-1]-1
     return(lst)
 
-def minSkew(genome):
-    skewList = skew(genome)
-    m = min(skewList)
-    minSkew = []
-    for i in range(len(skewList)):
-        if(skewList[i] == m):
-            minSkew.append(i)
-    return(minSkew)
+def min_skew(genome):
+    skew_list = skew(genome)
+    m = min(skew_list)
+    min_skew = []
+    for i in range(len(skew_list)):
+        if(skew_list[i] == m):
+            min_skew.append(i)
+    return(min_skew)
 
-print(minSkew("CCTATCGGTGGATTAGCATGTCCCTGTACGTTTCGCCGCGAACTAGTTCACACGGCTTGATGGCAAATGGTTTTTCCGGCGACCGTAATCGTCCACCGAG"))
+print(min_skew("CCTATCGGTGGATTAGCATGTCCCTGTACGTTTCGCCGCGAACTAGTTCACACGGCTTGATGGCAAATGGTTTTTCCGGCGACCGTAATCGTCCACCGAG"))
     
 
         
