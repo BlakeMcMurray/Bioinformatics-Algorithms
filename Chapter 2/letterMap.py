@@ -1,4 +1,4 @@
-def letterMap(letter):
+def letter_map(letter):
     if(letter == "A"):
         return(0)
     if(letter == "C"):
