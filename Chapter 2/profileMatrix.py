@@ -1,7 +1,6 @@
 import pseudoCountMatrix as CM 
 #working 
-def profileMatrix(Motifs):
-    countM = CM.count(Motifs)
-    profile = countM/2*(len(Motifs))
+def profile_matrix(motifs):
+    count_m = CM.count(motifs)
+    profile = count_m/2*(len(motifs))
     return(profile)
-
