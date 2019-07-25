@@ -1,6 +1,6 @@
 import profileMostProb as pmp 
-def motifs(profile,Dna):
+def motifs(profile,dna):
     kmers = []
-    for i in Dna:
-        kmers.append(pmp.profMostProb(i,len(profile),profile))
+    for i in dna:
+        kmers.append(pmp.prof_most_prob(i,len(profile),profile))
     return(kmers)
