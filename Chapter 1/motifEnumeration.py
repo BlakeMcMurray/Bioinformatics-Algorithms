@@ -1,14 +1,14 @@
 import dNeighborhood as dN
-import approxOccurence as AO
-def motifEnumeration(Dna,k,d):
+import approx_occurence as AO
+def motif_enumeration(dna,k,d):
     patterns = []
     count = 1
-    for i in range(len(Dna[0])-k+1):
-        kmer = Dna[0][i:i+k]
-        neigh = dN.iterativeNeighbors(kmer,d)
+    for i in range(len(dna[0])-k+1):
+        kmer = dna[0][i:i+k]
+        neigh = dN.iterative_neighbors(kmer,d)
         for p in neigh:
-            for m in range(1,len(Dna)):
-                if AO.approxOccurence(Dna[m],p,d) == False:
+            for m in range(1,len(dna)):
+                if AO.approx_occurence(dna[m],p,d) == False:
                     count = 0
                     break
             
@@ -19,7 +19,7 @@ def motifEnumeration(Dna,k,d):
     return(patterns)
 
 
-print(motifEnumeration(['TGTCCGTTCAGGAGTGAACTTCGAG','TCCTGTATCCATTTAAGTCGGCCCT','GCTATTATACTCGTTACCTGTTTCC','CCAAGTATCCAGTGTTTGTATTGTC','ACGAATGTCCGGCTGAAGCGATCTA','TTTCCTTTACTACACCAAACGCGAT','TGTCCCCCGGCTTTATCTTCGTCTG','TTTCCAGTTTCTATGGTTGTGCTAG','GTAGCTACCTTTCGGTCTCCCAGGG','TGGGATCTCCAAGTCCCATCGTATT'],5,1))
+print(motif_enumeration(['TGTCCGTTCAGGAGTGAACTTCGAG','TCCTGTATCCATTTAAGTCGGCCCT','GCTATTATACTCGTTACCTGTTTCC','CCAAGTATCCAGTGTTTGTATTGTC','ACGAATGTCCGGCTGAAGCGATCTA','TTTCCTTTACTACACCAAACGCGAT','TGTCCCCCGGCTTTATCTTCGTCTG','TTTCCAGTTTCTATGGTTGTGCTAG','GTAGCTACCTTTCGGTCTCCCAGGG','TGGGATCTCCAAGTCCCATCGTATT'],5,1))
 
                 
             
