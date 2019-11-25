@@ -1,4 +1,5 @@
-***Welcome!
+***Welcome!***
+
 #Notes:
 ------------------------------------------------------------------------------------------------------------------------
 This repository contains many of my implementations of the algorithms in Bioinformatics Algorithms: An Active Approach by Phillip Compeau and Pavel Pevzner. 
